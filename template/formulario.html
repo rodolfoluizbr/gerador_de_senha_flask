@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Definição do tipo de documento -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Modo de compatibilidade com o Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração de visualização em dispositivos móveis -->
+    <title>Gerador de Senhas</title> <!-- Título da página -->
+</head>
+<body>
+    <h1>Gerador de Senhas</h1> <!-- Título principal da página -->
+    <form action="/gerar_senha" method="post">
+        <label for="propriedades">Selecione as propriedades:</label><br>
+        <input type="checkbox" name="propriedades" value="n"> Números (0-9)<br>
+        <input type="checkbox" name="propriedades" value="ma"> Letras maiúsculas (A-Z)<br>
+        <input type="checkbox" name="propriedades" value="mi"> Letras minúsculas (a-z)<br>
+        <input type="checkbox" name="propriedades" value="e"> Caracteres especiais (%$#-_&)<br>
+        <input type="checkbox" name="propriedades" value="all"> Todas as opções<br>
+        <br>
+        <label for="prefixo">Prefixo:</label>
+        <input type="text" name="prefixo"><br> <!-- Entrada de texto para o prefixo da senha -->
+        <label for="sufixo">Sufixo:</label>
+        <input type="text" name="sufixo"><br> <!-- Entrada de texto para o sufixo da senha -->
+        <label for="tamanho">Tamanho da senha:</label>
+        <input type="number" name="tamanho"><br> <!-- Entrada numérica para o tamanho da senha -->
+        <br>
+        <input type="submit" value="Gerar Senha"> <!-- Botão de envio do formulário -->
+    </form>
+    <h1>Sua senha gerada:</h1> <!-- Título para a senha gerada -->
+    <p>{{ senha }}</p> <!-- Exibição da senha gerada -->
+</body>
+</html>
